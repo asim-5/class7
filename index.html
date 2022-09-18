@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="func(); return false">
+        Enter you grade: <input type="text" id="p1">
+        Enter you score: <input type="text" id="p2">
+        <button type="submit">Enter</button>
+    </form>
+    <h2 id="an"></h2>
+    <script>function func(){
+        let grade=document.querySelector("#p1").value;
+        grade=String(grade)
+        let Score=document.querySelector("#p2").value;
+        Score=Number(Score)
+        if(grade != "A" && grade !="B" && grade!="C" && grade != "D" && grade != "F" || Score >100 || Score <0){
+            document.querySelector("#an").innerHTML="Invalid input";
+        }
+        else if((grade == "A" || grade == "A+" || grade == "A*")&&(Score >75)){
+            document.querySelector("#an").innerHTML="Congratz you are selected for admission";
+    
+        }
+        else{
+            document.querySelector("#an").innerHTML="You are not selected for admission";
+        }
+    }
+
+    </script>
+
+</body>
+</html>
